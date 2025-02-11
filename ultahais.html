@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ulang Tahun Aisy</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            text-align: center;
+            font-family: "Courier New", Courier, monospace;
+            color: white;
+            background-color: black;
+            overflow: hidden;
+        }
+
+        .bgimg {
+            background-image: url('aisy.jpg');
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+            transition: filter 1s ease-in-out, background-image 1s ease-in-out;
+        }
+
+        .blur {
+            filter: blur(8px);
+        }
+
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        hr {
+            margin: auto;
+            width: 40%;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:disabled {
+            background-color: gray;
+            cursor: not-allowed;
+        }
+
+        button.enabled {
+            background-color: #ffcc00;
+            color: black;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .scrollable {
+            max-height: 60vh;
+            overflow-y: auto;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="confetti-canvas"></canvas>
+<div id="fireworks-container"></div>
+<div class="bgimg" id="background"></div>
+
+<div class="middle">
+    <h1 id="judul">COMING SOON</h1>
+    <hr>
+    <p id="demo"></p>
+    <button id="showMessageButton" disabled>Tekan Aku</button>
+    <div id="pesan" class="hidden scrollable">
+        <p>ASSALAMUALAIKUM AISY!! 🙌🏻😊</p>
+        <p>YEAYY HARINYA TELAH TIBA!!!, SELAMAT ULANG TAHUN yaaa!! 🎉🥳</p>
+        <p>🎉🥳 Aisy tambah satu tahun lagi, tambah dewasa, tambah bijaksana, dan tentunya makin luar biasa. 
+            Aku bener2 berharap tahun ini bawa banyak kebahagiaan, kegembiraan, dan kesuksesan buat kamu. 
+            Semoga segala impianmu semakin dekat untuk diraih, langkahmu selalu dimudahkan, dan semoga kamu tetap jadi Aisy yang aku kenal…</p>   
+        <p>Semoga semua impian dan harapanmu terkabul, semoga Allah selalu melancarkan rezekimu, kuliahmu, jalan hidupmu, dan semua yang kamu perjuangkan. 
+            Aku  bersyukur banget bisa kenal kamu. 
+            Makasih udah jadi orang yang spesial, yang selalu bikin hari2ku lebih berwarna walaupun kadang nyebelin juga wkwk 🤭.</p>
+        <p>Aku seneng banget bisa ngabisin waktu sama kamu. 
+            Mulai dari liat kamu ketawa, liat kamu bahagia, sampe kita kemaren bisa maen sama2 dan kemana. 
+            Aku senang banget bisa maen ke jogja, Bisa ketemu kamu, maen bareng, keliling Jogja, makan di angkringan pinggir jalan, liat jalanan Jogja yang rame, sampe bisa ke pantai terus kita dapet sunsettttt. 
+            pokoknya kemaren suuppppeeerrr seruuuuu….</p>
+        <p>Aku minta maaf klo kemaren terlalu physical touch, maaf kadang aku buat kamu kesal, bikin kamu bedmood atau mungkin ada hal2 kecil yang gasadar buat kamu ga nyaman. 
+            Aku Cuma pengen ngucapin terima kasih banyak buat semua yang kamu lakuin. Terima kasih karena udah jadi ais yang luar biasa. 
+            Terima kasih banyak banyak banyak Aisy! 🙇🏻‍♀🧏🏻‍♀</p>
+        <p>Aku juga berharap kamu selalu jaga diri, kapanpun dan di manapun kamu berada. 
+            Jaga kesehatan, jangan minum es terlalu banyak, jangan begadang, jangan suka cemberut, jangan marmul, dan jangan suka ovt. 
+            Masih banyak 'jangan' lagi yang perlu kamu lakuin wkwk. Kalau kamu punya keluh kesah, cerita aja yaa isss. 
+            Apapun itu, jangan malu-malu atau merasa ga enak sama aku. 
+            Aku bakal luangin waktu untuk kamuuu✌🏻.</p>
+        <p>Last but not least, jangan berubah yaa is. 
+            Tetaplah jadi Aisy yang aku kenal yaa…  
+            Kalopun kamu mau berubah, kasih tau aku alasannya yaa, biar aku ga kebingungan nyari tau sana sini, biar aku tau salahku dimana. 
+            Semoga kamu bisa sukses dunia dan akhirat. 
+            Aamiin...</p>
+        <p>Selamat ulang tahun sekali lagi Aisy! 
+            Semoga tahun ini jadi taun yang luar biasa buat kammu. 💫✨🌟</p>
+        <p>Semoga kita bisa terus mendukung satu sama lain dan tumbuh bareng jadi versi terbaik dari diri kita masing2. 
+            Makasih udah buat hariku lebih istimewa, dan semoga kita bisa terus berbagi kebahagiaan dan momen seru sampe kapapun itu…</p>
+        <p>Semoga segala kebaikan dan rahmat selalu menyertaimu. Aamiin... 🙌💖</p>
+
+        <p><a href="https://api.whatsapp.com/qr/2FL4FFIRXFBMH1?autoload=1&app_absent=0🎉🥳" target="_blank" style="color: yellow; text-decoration: none; font-weight: bold;">Klik disini</a></p>
+    </div>
+</div>
+
+<audio id="lagu" src="nina.mp3" autoplay></audio>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.1/dist/confetti.browser.min.js"></script>
+<script>
+var countDownDate = new Date("Feb 18, 2025 00:00:00").getTime();
+var button = document.getElementById("showMessageButton");
+var pesan = document.getElementById("pesan");
+var background = document.getElementById("background");
+var audio = document.getElementById("lagu");
+
+audio.play().catch(() => {
+    document.addEventListener('click', () => {
+        audio.play();
+    }, { once: true });
+});
+
+var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("judul").innerHTML = "SELAMAT ULANG TAHUN AISY!! 🎉🥳";
+        document.getElementById("demo").style.display = "none";
+        button.disabled = false;
+        button.classList.add("enabled");
+        audio.play();
+        confetti();
+    }
+}, 1000);
+
+button.addEventListener("click", function() {
+    pesan.classList.remove("hidden");
+    button.style.display = "none";
+    background.classList.add("blur");
+    setTimeout(() => {
+        background.classList.remove("blur");
+        background.style.backgroundImage = "url('bg2.jpg')";
+    }, 3000);
+    startConfetti();
+    startFireworks();
+    audio.play();
+});
+
+function startConfetti() {
+    var duration = 5 * 1000;
+    var end = Date.now() + duration;
+    (function frame() {
+        confetti({ particleCount: 5, spread: 80 });
+        if (Date.now() < end) {
+            requestAnimationFrame(frame);
+        }
+    })();
+}
+
+function startFireworks() {
+    var container = document.getElementById("fireworks-container");
+    container.innerHTML = "";
+    for (let i = 0; i < 10; i++) {
+        setTimeout(() => {
+            let firework = document.createElement("div");
+            firework.innerHTML = "🎆";
+            firework.style.position = "absolute";
+            firework.style.left = Math.random() * window.innerWidth + "px";
+            firework.style.top = Math.random() * window.innerHeight + "px";
+            firework.style.fontSize = "50px";
+            container.appendChild(firework);
+            setTimeout(() => firework.remove(), 2000);
+        }, i * 300);
+    }
+}
+</script>
+
+</body>
+</html>
